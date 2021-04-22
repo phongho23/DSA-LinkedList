@@ -112,7 +112,7 @@ function size(llist) {
     return sizeCount;
 }
 
-//stackOverflow quest forum - review
+//stackOverflow quest forum - review item later
 function isEmpty(llist) {
     let currNode = llist.head;
     if (currNode === null) {
