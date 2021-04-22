@@ -87,18 +87,63 @@ class LinkedList {
             currNode = currNode.next;
         }
         if (currNode === null) {
-            console.log('Item not found');
+            console.log('Item Not Found');
             return;
         }
         previousNode.next = currNode.next;
     }
 }
 
+function display(llist) {
+    let currNode = llist.head;
+    while (currNode !== null) {
+      console.log(currNode.value);
+      currNode = currNode.next;
+    }
+  }
+
+function size(llist) {
+    let sizeCount = 0;
+    let currNode = llist.head;
+    while (currNode !== null) {
+        sizeCount++;
+        currNode = currNode.next;
+    }
+    return sizeCount;
+}
+
+//stackOverflow quest forum - review
+function isEmpty(llist) {
+    let currNode = llist.head;
+    if (currNode === null) {
+        console.log('List is Empty!');
+    }   else {
+        console.log('List is NOT Empty!')
+        }   
+    }
+
+function findLast(llist) {
+    if (llist.head === null) {
+        console.log('Linked list does not exist');
+        return;
+    }
+        let currNode = llist.head;
+        while (currNode.next !== null) {
+          currNode = currNode.next;
+        }
+        console.log(currNode.value);
+        return;
+}
+      
+
 function main() {
     let SLL = new LinkedList();
+    isEmpty(SLL); //is empty
     SLL.insertLast('Apollo');
+    isEmpty(SLL); // is not empty
     SLL.insertLast('Boomer');
     SLL.insertLast('Helo');
+    console.log(size(SLL)); //3
     SLL.insertLast('Husker');
     SLL.insertLast('Starbuck');
     SLL.insertLast('Tauhida');
@@ -106,7 +151,9 @@ function main() {
     SLL.insertBefore('Athena', 'Boomer');
     SLL.insertAfter('Hotdog', 'Helo');
     SLL.insertAt('Kat', 3);
-    SLL.remove('tauhida')
+    SLL.remove('Tauhida');
+    display(SLL);
+    findLast(SLL);
   }
-  
+
   main();
