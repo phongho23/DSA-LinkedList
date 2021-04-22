@@ -1,4 +1,4 @@
-class Node {
+class _Node {
     constructor(value, next) {
         this.value = value;
         this.next = next;
@@ -11,7 +11,7 @@ class LinkedList {
     }
 
     insertFirst(value) {
-        this.head = new Node(value, this.head);
+        this.head = new _Node(value, this.head);
     }
 
     insertLast(value) {
@@ -23,7 +23,7 @@ class LinkedList {
             while (tempNode.next !== null) {
                 tempNode = tempNode.next;
             }
-            tempNode.next = new Node(value, null);
+            tempNode.next = new _Node(value, null);
         }
     }
 
@@ -34,7 +34,7 @@ class LinkedList {
           tempNode = currNode;
           currNode = currNode.next;
         }
-        tempNode.next = new Node(value, currNode);
+        tempNode.next = new _Node(value, currNode);
       }
 
       insertAt(value, index) {
@@ -44,13 +44,13 @@ class LinkedList {
           currNode = currNode.next;
           currIndex++;
         }
-        currNode.next = new Node(value, currNode.next.next);
+        currNode.next = new _Node(value, currNode.next.next);
       }
 
       insertAfter(value, insertion) {
         let currNode = this.find(insertion);
         let afterNode = currNode.next;
-        currNode.next = new Node(value, afterNode);
+        currNode.next = new _Node(value, afterNode);
       }
 
     find(item) { 
@@ -92,8 +92,6 @@ class LinkedList {
         }
         previousNode.next = currNode.next;
     }
-
-
 }
 
 function main() {
@@ -110,4 +108,5 @@ function main() {
     SLL.insertAt('Kat', 3);
     SLL.remove('tauhida')
   }
+  
   main();
